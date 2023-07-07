@@ -6,4 +6,5 @@ RUN mvn package
 FROM openjdk:8u171-jre-alpine
 WORKDIR /app
 COPY --from=maven target/game-of-life-*.jar ./game-of-life.jar
+EXPOSE 80
 CMD ["java", "-jar", "./game-of-life.jar"]
